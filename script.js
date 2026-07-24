@@ -1,52 +1,30 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+const openBtn = document.getElementById("openBtn");
 
-body{
-  background:linear-gradient(180deg,#f8f6f1,#efe6d7);
-  font-family:Georgia,serif;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
+openBtn.addEventListener("click", () => {
 
-.cover{
-  text-align:center;
-}
+    document.body.style.transition = "1s";
 
-.cover h1{
-  color:#1d4f91;
-  font-size:60px;
-  font-weight:400;
-}
+    document.body.style.background =
+    "linear-gradient(180deg,#ffffff,#efe3cf)";
 
-.and{
-  font-size:40px;
-  color:#caa44f;
-  margin:15px 0;
-}
+    openBtn.innerHTML = "❤️ Taklifnoma ochildi";
 
-.date{
-  margin-top:15px;
-  font-size:22px;
-  color:#666;
-}
+    openBtn.style.background = "#b68a35";
 
-#openBtn{
-  margin-top:40px;
-  padding:18px 45px;
-  border:none;
-  border-radius:50px;
-  background:#2d6fb2;
-  color:white;
-  font-size:20px;
-  cursor:pointer;
-  transition:.3s;
-}
+    setTimeout(() => {
 
-#openBtn:hover{
-  transform:scale(1.05);
-}
+        alert(
+`💍 SHAXRIZODA 🤍 OZODBEK
+
+📅 6-sentyabr 2026
+🕖 19:00
+
+📍 Buxoro shahar
+Shox Saroy restorani
+
+Sizni ushbu unutilmas kunda kutib qolamiz! ❤️`
+        );
+
+    },700);
+
+});
