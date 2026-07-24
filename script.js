@@ -12,15 +12,23 @@ openBtn.addEventListener("click", () => {
 
     openBtn.disabled = true;
 
+  setTimeout(() => {
+
+    hero.style.opacity = "0";
+
+    hero.style.transition = "1.5s";
+
     setTimeout(() => {
-
         hero.style.display = "none";
+    },1500);
 
-        invitation.style.display = "block";
+    invitation.style.display = "block";
 
-        startCountdown();
+    invitation.style.animation = "fadeIn 1.5s";
 
-    },2000);
+    startCountdown();
+
+},2500);
 
 });
 
