@@ -1,30 +1,54 @@
 const openBtn = document.getElementById("openBtn");
+const leftDoor = document.getElementById("leftDoor");
+const rightDoor = document.getElementById("rightDoor");
+const hero = document.querySelector(".hero");
+const invitation = document.getElementById("invitation");
+const timer = document.getElementById("timer");
 
 openBtn.addEventListener("click", () => {
 
-    document.body.style.transition = "1s";
+    leftDoor.style.transform = "perspective(1200px) rotateY(-105deg)";
+    rightDoor.style.transform = "perspective(1200px) rotateY(105deg)";
 
-    document.body.style.background =
-    "linear-gradient(180deg,#ffffff,#efe3cf)";
-
-    openBtn.innerHTML = "❤️ Taklifnoma ochildi";
-
-    openBtn.style.background = "#b68a35";
+    openBtn.disabled = true;
 
     setTimeout(() => {
 
-        alert(
-`💍 SHAXRIZODA 🤍 OZODBEK
+        hero.style.display = "none";
 
-📅 6-sentyabr 2026
-🕖 19:00
+        invitation.style.display = "block";
 
-📍 Buxoro shahar
-Shox Saroy restorani
+        startCountdown();
 
-Sizni ushbu unutilmas kunda kutib qolamiz! ❤️`
-        );
-
-    },700);
+    },2000);
 
 });
+
+function startCountdown(){
+
+    const target = new Date("2026-09-06T19:00:00").getTime();
+
+    function update(){
+
+        const now = new Date().getTime();
+
+        const diff = target - now;
+
+        const day = Math.floor(diff/1000/60/60/24);
+
+        const hour = Math.floor(diff%(1000*60*60*24)/(1000*60*60));
+
+        const min = Math.floor(diff%(1000*60*60)/(1000*60));
+
+        const sec = Math.floor(diff%(1000*60)/1000);
+
+        timer.innerHTML =
+        `${day} kun ${hour} soat ${min} daqiqa ${sec} soniya`;
+
+    }
+
+    update();
+
+    setInterval(update,1000);
+
+}
